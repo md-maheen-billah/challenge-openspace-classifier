@@ -10,7 +10,7 @@ The scenario simulates a company working in an open space office with six tables
 
 Each time the script runs, it assigns everyone to a new seat, demonstrating the use of classes, objects, encapsulation, and file handling in a practical, real-world inspired example
 
-![coworking_img](https://i.ibb.co/KjdCZVHy/Chat-GPT-Image-Feb-12-2026-04-38-30-PM.png)
+![coworking_img](https://i.ibb.co/VYpgnxbN/picture.png)
 
 
 ## 💡 OOP Concepts Used
