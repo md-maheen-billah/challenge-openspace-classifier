@@ -1,6 +1,6 @@
 import random
 import pandas as pd
-from table import Table
+from .table import Table
 
 class Openspace:
     def __init__(self):
@@ -52,13 +52,3 @@ class Openspace:
 
         print("Stored as an excel file-> " + filename)
     
-names = [
-    "Emma", "Liam", "Olivia", "Noah", "Ava", "Elijah",
-    "Sophia", "Oliver", "Isabella", "Lucas", "Mia", "Mason",
-    "Amelia", "Ethan", "Harper", "Logan", "Evelyn", "James",
-    "Abigail", "Benjamin", "Charlotte", "Alexander", "Ella", "Henry"
-]
-          
-org = Openspace()
-org.organize(names)
-org.store()

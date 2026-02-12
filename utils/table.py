@@ -1,5 +1,5 @@
 class Seat:
-    def __init__(self,free,occupant):
+    def __init__(self):
         self.__free = True
         self.__occupant = None
 
@@ -27,7 +27,7 @@ class Seat:
         if not self.__free:
             name = self.__occupant
             self.__occupant = None
-            self.__free = False
+            self.__free = True
             return name
         else:
             print("There is no one to remove from seat")
@@ -42,14 +42,15 @@ class Seat:
 class Table:
     def __init__(self):
         self.capacity = 4
-        self.seats = [Seat(), Seat(), Seat(), Seat()]
+        self.seats = []             
+        for _ in range(self.capacity):
+            self.seats.append(Seat())
 
     def has_free_spot(self):
         for seat in self.seats:
             if seat.free:
                 return True
-            else:
-                return False
+        return False
             
     def assign_seat(self,name):
         for seat in self.seats:
@@ -73,5 +74,7 @@ class Table:
             else:
                 print_seat.append(seat.occupant)
         return f"{print_seat[0]} | {print_seat[1]} | {print_seat[2]} | {print_seat[3]}"
+    
+
 
         
