@@ -71,25 +71,25 @@ The project uses the following Python libraries:
 
 3. The script requires input file, and organizes colleagues to random seat assignments. The resulting seating plan is displayed in the console and also saved to an "output.csv" file in the root directory. 
 
-```python
-input_filepath = "new_colleagues.csv"
-output_filename = "output.csv"
+    ```python
+    input_filepath = "new_colleagues.csv"
+    output_filename = "output.csv"
 
-# Creates a list that contains all the colleagues names
-names = file_utils.read_names_from_csv(input_filepath)
+    # Creates a list that contains all the colleagues names
+    names = file_utils.read_names_from_csv(input_filepath)
 
-# create an OpenSpace()
-open_space = OpenSpace()
+    # create an OpenSpace()
+    open_space = OpenSpace()
 
-# assign a colleague randomly to a table
-open_space.organize(names)
+    # assign a colleague randomly to a table
+    open_space.organize(names)
 
-# save the seat assigments to a new file
-open_space.store(output_filename)
+    # save the seat assigments to a new file
+    open_space.store(output_filename)
 
-# display assignments in the terminal
-open_space.display()
-```
+    # display assignments in the terminal
+    open_space.display()
+    ```
 ## ⏱️ Timeline
 
 This project took 5 hours for completion.
