@@ -1,7 +1,6 @@
-Table,Seat 1,Seat 2,Seat 3,Seat 4
-Table1,Person11,Person7,Person2,Person14
-Table2,Person13,Person20,Person22,Person23
-Table3,Person16,Person19,Person8,Person5
-Table4,Person3,Person10,Person1,Person17
-Table5,Person4,Person12,Person9,Person15
-Table6,Person21,Person18,Person6,Person24
+Table 1,Person20,Person4,Person11,Person5
+Table 2,Person12,Person19,Person8,Person24
+Table 3,Person15,Person22,Person1,Person10
+Table 4,Person13,Person3,Person14,Person21
+Table 5,Person7,Person2,Person18,Person23
+Table 6,Person17,Person6,Person16,Person9

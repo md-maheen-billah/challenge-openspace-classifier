@@ -1,6 +1,6 @@
 import random #we imported this so we can use to randomize the people in the list
-import pandas as pd #imported so that we can try to store data in an excel file
-from .table import Table #had to import the class Table from table.py so can we can use it for objects inside class Openspace
+import csv
+from utils.table import Table #had to import the class Table from table.py so can we can use it for objects inside class Openspace
 
 class Openspace:
     """
@@ -73,23 +73,20 @@ class Openspace:
 
         print("Stored as an excel file-> " + filename)
 
-    def __str__(self):
+    def store(self, output_filename): 
         """
-        Returns a string representation of all tables and their seating.
+        This method is used to store the data we genrated after randomly assigning everyone a seat, therefore the seating
+        order and saving it in a .csv file
         """
-        result = ""
-        count = 1
-        for table in self.tables:
-            print_seat = []
-            for seat in table.seats:
-                if seat.free:
-                    print_seat.append("Free") #incase no one is seating on it, we are denoting as a Free seat
-                else:
-                    print_seat.append(seat.occupant)
-
-            result += f"Table {count}: {print_seat[0]} | {print_seat[1]} | {print_seat[2]} | {print_seat[3]}"
-            count += 1
-        return result
+        with open(output_filename, 'w', encoding='UTF8') as f:
+            writer = csv.writer(f)
+            table_no = 1
+            for table in self.tables:
+                seated_names = ["Table "+str(table_no)]
+                for seat in table.seats:
+                    seated_names.append(seat.occupant) 
+                writer.writerow(seated_names)
+                table_no += 1
 
 
         

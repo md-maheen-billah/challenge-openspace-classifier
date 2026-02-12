@@ -88,10 +88,10 @@ class Table:
         """
         This method checks whethere there is a free seat on the table
         """
-        for seat in self.seats: # we looped through the seats to check if they are free
-            if seat.free:
-                return True
-        return False
+        if self.left_capacity() > 0:
+            return True
+        else:
+            return False
             
     def assign_seat(self,name):
         """
