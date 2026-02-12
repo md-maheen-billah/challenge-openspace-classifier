@@ -74,33 +74,55 @@ class Seat:
 
 
 class Table:
+    """
+    This class is that of a single table with 4 seats
+
+    Attributes:
+        __capacity (int): The number of seats in a table which we set as 4 by default
+        __seats (list of Seat): List containing objects made of Seat class.
+    """
     def __init__(self):
-        self.capacity = 4
+        """
+        Constructor for Table
+        """
+        self.capacity = 4 #set to 4 by default
         self.seats = []             
-        for _ in range(self.capacity):
+        for _ in range(self.capacity): #using loop to append 4 Seat objects inside the list self.seats
             self.seats.append(Seat())
 
     def has_free_spot(self):
-        for seat in self.seats:
+        """
+        This method checks whethere there is a free seat on the table
+        """
+        for seat in self.seats: # we looped through the seats to check if they are free
             if seat.free:
                 return True
         return False
             
     def assign_seat(self,name):
-        for seat in self.seats:
-            if seat.free:
-                seat.set_occupant(name)
+        """
+        This method assigns a seat to a person if there is spot in the table
+        """
+        for seat in self.seats: 
+            if seat.free:  
+                seat.set_occupant(name) # after looping though every sit and checking availability we assign someone to a seat
                 return
         print("No seat available")
 
     def left_capacity(self):
+        """
+        This method checks the spots left in a table
+        """
         count = 0
-        for seat in self.seats:
+        for seat in self.seats:  # a simple loop to make a counter to check how many seats are free
             if seat.free:
                 count += 1
         return count
     
     def __str__(self):
+        """
+        Returns the status of the table in a string
+        """
         print_seat = []
         for seat in self.seats:
             if seat.free:
