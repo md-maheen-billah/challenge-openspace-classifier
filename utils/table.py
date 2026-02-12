@@ -15,17 +15,11 @@ class Seat:
 
     @property
     def free(self):
-        """
-        bool: Returns True when seat is Free
-        """
         return self.__free
     
         
     @property
     def occupant(self):
-        """
-        str\None: Returns the name if seat is taken, else returns None.
-        """
         return self.__occupant
     
         
