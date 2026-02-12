@@ -32,6 +32,12 @@ class Seat:
         else:
             print("There is no one to remove from seat")
             return None
+        
+    def __str__(self):
+        if self.__free:
+            return "Seat is free"
+        else:
+            return f"Seat is occupied by {self.__occupant}"
     
 class Table:
     def __init__(self):
@@ -58,5 +64,14 @@ class Table:
             if seat.free:
                 count += 1
         return count
-            
+    
+    def __str__(self):
+        print_seat = []
+        for seat in self.seats:
+            if seat.free:
+                print_seat.append("Free")
+            else:
+                print_seat.append(seat.occupant)
+        return f"{print_seat[0]} | {print_seat[1]} | {print_seat[2]} | {print_seat[3]}"
+
         
