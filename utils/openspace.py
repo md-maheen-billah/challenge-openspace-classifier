@@ -72,4 +72,25 @@ class Openspace:
         dataframe.to_csv(filename, index=False)
 
         print("Stored as an excel file-> " + filename)
+
+    def __str__(self):
+        """
+        Returns a string representation of all tables and their seating.
+        """
+        result = ""
+        count = 1
+        for table in self.tables:
+            print_seat = []
+            for seat in table.seats:
+                if seat.free:
+                    print_seat.append("Free") #incase no one is seating on it, we are denoting as a Free seat
+                else:
+                    print_seat.append(seat.occupant)
+
+            result += f"Table {count}: {print_seat[0]} | {print_seat[1]} | {print_seat[2]} | {print_seat[3]}"
+            count += 1
+        return result
+
+
+        
     
