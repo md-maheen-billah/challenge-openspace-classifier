@@ -50,29 +50,6 @@ class Openspace:
             print(f"Table {count}: {print_seat[0]} | {print_seat[1]} | {print_seat[2]} | {print_seat[3]}")
             count += 1
 
-    def store(self, filename):
-        """
-        This method is used to store the data we genrated after randomly assigning everyone a seat, therefore the seating
-        order and saving it in a .csv file
-        """
-        data = [] 
-        table_number = 1 #we start by assigning table numbers
-        for table in self.tables:
-            row = []
-            for seat in table.seats:
-                if seat.free:
-                    row.append("")  # empty string for free seat
-                else:
-                    row.append(seat.occupant)
-            data.append(["Table" + str(table_number)] + row)
-            table_number += 1
-
-        dataframe = pd.DataFrame(data, columns=["Table", "Seat 1", "Seat 2", "Seat 3", "Seat 4"])
-
-        dataframe.to_csv(filename, index=False)
-
-        print("Stored as an excel file-> " + filename)
-
     def store(self, output_filename): 
         """
         This method is used to store the data we genrated after randomly assigning everyone a seat, therefore the seating
